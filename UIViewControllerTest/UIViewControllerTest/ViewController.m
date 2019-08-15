@@ -78,10 +78,13 @@ int tip=0;
     
     [self.view addSubview:label];
     
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    button.frame = CGRectMake(40, 600, 240, 30);
-    button.backgroundColor = [UIColor redColor];
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(40, 600, 240, 240);
+    //button.backgroundColor = [UIColor redColor];
+    //[button setBackgroundImage:[UIImage imageNamed:@"Image"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"Image"] forState:UIControlStateNormal];
     [button setTitle:@"点击我一下" forState:UIControlStateNormal];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 80, 40)];
     [button addTarget:self action:@selector(changeColor) forControlEvents:UIControlEventTouchDragExit];
     [self.view addSubview:button];
 }
